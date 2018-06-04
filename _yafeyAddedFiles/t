@@ -1,0 +1,11 @@
+Modify user information
+1. users open the browser and enter to modify the user information interface.
+2. users modify related information
+3. the user clicks the submit button, and the browser submits the Ajax request to AVC Service selectively according to the user's modification information.
+A. if the user's FullName changes, call ModifyAccount, need to carry the 2 parameters of LanId and FullName, Service receives the request, and calls SP to execute the database operation:
+If successful, Service returns the correct information to the browser and decides whether to send the next Ajax request B according to the judgement.
+If failure, Service returns the wrong information to the browser and decides whether to send the next Ajax request B according to the judgement.
+B. if the user's SecurityLevel changes, call addEntitlement, need to carry the 2 parameters of LanId and SecurityLevel, Service receives the request, and calls SP to execute the database operation:
+If successful, Service returns the correct information to browsers.
+If Service fails, the error message is returned to the browser.
+C. if the user's information has not changed, clicking the submit button will prompt the user to change the information.
